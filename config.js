@@ -1,13 +1,14 @@
 // ─────────────────────────────────────────────────────────────
 //  Configuration des comptes et du classement en ligne (Firebase)
-//  Remplace les valeurs ci-dessous par celles de TON projet Firebase.
-//  (Réglages du projet → Tes applications → application Web → "Configuration")
-//  Tant que ce fichier n'est pas rempli, le jeu fonctionne quand même,
-//  mais sans comptes ni classement (statistiques gardées dans le navigateur).
+//  Projet : solitaire-2fecf
+//  Ces valeurs ne sont pas secrètes : la sécurité vient des règles Firestore.
 // ─────────────────────────────────────────────────────────────
 window.SOLITAIRE_FIREBASE = {
-  apiKey: "COLLE_TA_CLE_ICI",
-  authDomain: "ton-projet.firebaseapp.com",
-  projectId: "ton-projet",
-  appId: "COLLE_TON_APP_ID_ICI"
+  apiKey: "AIzaSyDDED-W2qzwCXzH8o9BSblLnZJYIq9gUts",
+  authDomain: "solitaire-2fecf.firebaseapp.com",
+  projectId: "solitaire-2fecf",
+  storageBucket: "solitaire-2fecf.firebasestorage.app",
+  messagingSenderId: "452259994903",
+  appId: "1:452259994903:web:ca8ff0ecff1d90e821ab52",
+  measurementId: "G-L0X7CG9JVG"
 };
