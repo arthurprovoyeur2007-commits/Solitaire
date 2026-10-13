@@ -1,0 +1,18 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /stats/{uid} {
+      // Le classement est public (pseudo + scores, jamais l'e-mail)
+      allow read: if true;
+      // Chacun ne peut écrire que sa propre fiche, avec des champs connus et des valeurs raisonnables
+      allow create, update: if request.auth != null
+        && request.auth.uid == uid
+        && request.resource.data.keys().hasOnly(['l0','l1','l2','l3','pts','n'])
+        && request.resource.data.pts is number
+        && request.resource.data.pts >= 0 && request.resource.data.pts <= 1000000
+        && request.resource.data.n is string
+        && request.resource.data.n.size() >= 1 && request.resource.data.n.size() <= 20;
+      allow delete: if request.auth != null && request.auth.uid == uid;
+    }
+  }
+}
